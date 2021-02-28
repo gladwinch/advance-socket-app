@@ -1,0 +1,16 @@
+<h1>hello</h1>
+<script src="/socket.io/socket.io.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.2/socket.io.js" integrity="sha512-YybopSVjZU0fe8TY4YDuQbP5bhwpGBE/T6eBUEZ0usM72IWBfWrgVI13qfX4V2A/W7Hdqnm7PIOYOwP9YHnICw==" crossorigin="anonymous"></script> -->
+<script>
+
+    const option = {}
+
+    const socket = io('http://localhost:8080/admin', option)
+
+    // events 
+    socket.on('admin-connect', message => {
+        console.log(message)
+    })
+
+    socket.emit('admin-msg', "Message from client")
+</script>
